@@ -1,0 +1,11 @@
+%h1 Persons profile
+%p.notice= notice
+%p.alert= alert
+- if user_signed_in?
+  %span
+    Здравствуйте, #{current_user.email}
+  = link_to 'Выйти', destroy_user_session_path, :method => :delete
+  %p= link_to 'Categories', controller: 'comments'
+- else
+  = link_to 'Войти', new_user_session_path
+  или #{link_to 'Зарегистрироваться', new_user_registration_path}

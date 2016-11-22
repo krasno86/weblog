@@ -1,0 +1,26 @@
+development:
+  adapter: postgresql
+  encoding: utf8
+  database: weblog_development
+  pool: 5
+  username: krasno_o
+  password: 123456
+
+test: &TEST
+  adapter: postgresql
+  encoding: utf8
+  database: weblog_test
+  pool: 5
+  username:
+  password:
+
+production:
+  adapter: postgresql
+  encoding: utf8
+  database: project_production
+  pool: 5
+  username:
+  password:
+
+cucumber:
+  <<: *TEST
