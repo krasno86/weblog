@@ -11,7 +11,11 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery_ujs
-//= require turbolinks
-//= require bootstrap-sprockets
+//= require jquery.easing.min
+//= require jquery.magnific-popup
+//= require bootstrap
+//= require scrollreveal
+//= require creative
 //= require_tree .
+// require turbolinks
+

@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
   devise_for :users
-  resources :pictures
-   root 'pictures#index'
+  resources :categories, :picture
+   root 'picture#index'
    get 'persons/profile', as: 'user_root'
 end
   # The priority is based upon order of creation: first created -> highest priority.

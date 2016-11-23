@@ -1,2 +1,5 @@
-class CategoriesController < ActionController::Base
+class CategoriesController < ApplicationController
+  def index
+
+  end
 end
