@@ -3,7 +3,7 @@
     <div class="header-content-inner">
       <h1 id="homeHeading">Your Favorite Source</h1>
       <hr>
-      <a href="/categories#index" class="btn btn-primary btn-xl page-scroll">Tits category</a>
+      <%= doc = File.open("tits_2.jpg") { |f| Nokogiri::HTML(f) }%>
     </div>
   </div>
 </header>

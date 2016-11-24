@@ -44,13 +44,12 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
+        <li><a>
+          <% if user_signed_in? %>Здравствуйте, <%= current_user.email %>
+        </a></li>
         <li>
-          <a><% if user_signed_in? %>Здравствуйте, <%= current_user.email %></a>
+          <%= link_to 'Выйти', destroy_user_session_path, :method => :delete %><% else %>
         </li>
-        <li>
-          <%= link_to 'Выйти', destroy_user_session_path, :method => :delete %>
-        </li>
-          <% else %>
         <li>
           <%= link_to 'Войти', new_user_session_path %>
         </li>
@@ -58,16 +57,16 @@
         </li>
           <% end %>
         <li>
-          <a class="page-scroll" href="#services">Services</a>
+          <a class="page-scroll" href="/categories#index">Категории</a>
         </li>
         <li>
-          <a class="page-scroll" href="#services">Services</a>
+          <a class="page-scroll" href="/pictures#index">Фото</a>
         </li>
         <li>
-          <a class="page-scroll" href="#portfolio">Portfolio</a>
+          <a class="page-scroll" href="/coments#index">Коментарии</a>
         </li>
         <li>
-          <a class="page-scroll" href="#contact">Contact</a>
+          <a class="page-scroll" href="/userAction#index">Действия пользователя</a>
         </li>
       </ul>
     </div>
@@ -76,15 +75,6 @@
   <!-- /.container-fluid -->
 </nav>
 
-<header>
-  <div class="header-content">
-    <div class="header-content-inner">
-      <h1 id="homeHeading">Your Favorite Source</h1>
-      <hr>
-      <a href="/categories#index" class="btn btn-primary btn-xl page-scroll">Tits category</a>
-    </div>
-  </div>
-</header>
 
 <!-- jQuery -->
 
