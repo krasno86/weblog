@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   # devise_for :admins, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   devise_for :users, ActiveAdmin::Devise.config
-  resources :categories, :picture, :tits, :categories, :show
-   root 'picture#index'
+  resources :categories, :pictures, :tits, :categories, :show
+   root 'pictures#index'
    get 'persons/profile', as: 'user_root'
 end
   # The priority is based upon order of creation: first created -> highest priority.
