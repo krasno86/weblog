@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   # devise_for :admins, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   devise_for :users, ActiveAdmin::Devise.config
-  resources :categories, :picture, :tits, :categories#show
+  resources :categories, :picture, :tits, :categories, :show
    root 'picture#index'
    get 'persons/profile', as: 'user_root'
 end

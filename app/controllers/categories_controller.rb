@@ -11,7 +11,7 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    tits_path
+    #tits_path
     #render layout: false
   end
 
