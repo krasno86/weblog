@@ -83,7 +83,7 @@
     <div class="row no-gutter popup-gallery">
       <div class="col-lg-4 col-sm-6">
         <a href="<%={"controller"=>"categories", "action"=>category.name} %>" class="portfolio-box">
-          <%= image_tag(category.pictures.order("RANDOM()").first, class: "img-responsive", alt: "", size: "650x350")%>
+          <%= image_tag(category.pictures.order("RANDOM()").first.avatar.url, class: "img-responsive", alt: "", size: "650x350")%>
           <div class="portfolio-box-caption">
             <div class="portfolio-box-caption-content">
               <div class="project-category text-faded">

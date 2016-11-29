@@ -16,7 +16,7 @@ index do
     column :id
     column :title
     column :category_id
-    column :avatar
+    # column :avatar
     column :comment
     column :user_id
     actions
