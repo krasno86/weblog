@@ -1,45 +1,29 @@
 class CategoriesController < ApplicationController
 
   #before_filter :authenticate_user!
+  before_action :set_category, only:[:show]
 
   def after_sign_in_path_for(resource)
     current_user_path
   end
 
   def show
-    render layout: false
-    @picture = Picture.find(params[:id])
-    authorize! :read, @article
-  end
-
-  def tits
-    #tits_path
     #render layout: false
-    @picture = Picture.find(category[:id])
+    @categories = Picture.find(params[:id])
+
   end
 
   def index
-    @category = Category.all
-  end
-
-  def alcohol
-    @picture = Picture.find(params[:id])
-  end
-
-  def ruby
-    @picture = Picture.find(params[:id])
-  end
-
-  def christmas
-    @picture = Picture.find(params[:id])
+    #render layout: false
+    @categories = Category.all
   end
 
   def new
-    @picture = Picture.new
+    @categories = Category.new
   end
 
-  def cats
-    @picture = Picture.find(params[:id])
+  private
+  def set_category
+    @categories = Category.find(params[:id])
   end
-
 end
