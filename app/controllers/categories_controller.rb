@@ -9,7 +9,9 @@ class CategoriesController < ApplicationController
 
   def show
     #render layout: false
-    @categories = Picture.find(params[:id])
+    #@pictures = Picture.find(params[:id])
+    @pictures = @category.pictures
+    # Picture.where(category_id: params[:id])
 
   end
 
@@ -24,6 +26,6 @@ class CategoriesController < ApplicationController
 
   private
   def set_category
-    @categories = Category.find(params[:id])
+    @category = Category.find(params[:id])
   end
 end

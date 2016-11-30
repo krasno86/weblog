@@ -3,7 +3,12 @@ Rails.application.routes.draw do
   # devise_for :admins, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   devise_for :users, ActiveAdmin::Devise.config
-  resources :categories, :pictures, :tits, :categories, :show
+
+  resources :categories do
+    resource :pictures do
+      resource :comments, only: [:create]
+  end
+end
    root 'pictures#index'
    get 'persons/profile', as: 'user_root'
 end
