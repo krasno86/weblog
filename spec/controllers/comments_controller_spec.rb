@@ -36,10 +36,10 @@ RSpec.describe CommentsController, type: :controller do
   # CommentsController. Be sure to keep this updated too.
   let(:valid_session) { {} }
 
-  describe "GET #index" do
+  describe "GET #bla" do
     it "assigns all comments as @comments" do
       comment = Comment.create! valid_attributes
-      get :index, params: {}, session: valid_session
+      get :bla, params: {}, session: valid_session
       expect(assigns(:comments)).to eq([comment])
     end
   end

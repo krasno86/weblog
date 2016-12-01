@@ -5,18 +5,25 @@ Rails.application.routes.draw do
   devise_for :users, ActiveAdmin::Devise.config
 
   resources :categories do
-    resource :pictures do
+    resources :pictures do
       resource :comments, only: [:create]
+    end
   end
-end
-   root 'pictures#index'
-   get 'persons/profile', as: 'user_root'
+
+  get 'likes_pictures', to: 'pictures#likes_pictures'
+  # get 'bla', to: 'pictures#bla'
+
+  resources :pictures
+
+  root 'pictures#bla'
+
+  get 'persons/profile', as: 'user_root'
 end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  # root 'welcome#bla'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

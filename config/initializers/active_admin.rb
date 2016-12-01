@@ -112,7 +112,7 @@ ActiveAdmin.setup do |config|
   # roots for each namespace.
   #
   # Default:
-  # config.root_to = 'dashboard#index'
+  # config.root_to = 'dashboard#bla'
 
   # == Admin Comments
   #
@@ -128,7 +128,7 @@ ActiveAdmin.setup do |config|
   # to be used for ordering:
   # config.comments_order = 'created_at ASC'
   #
-  # You can disable the menu item for the comments index page:
+  # You can disable the menu item for the comments bla page:
   # config.comments_menu = false
   #
   # You can customize the comment menu:
@@ -257,7 +257,7 @@ ActiveAdmin.setup do |config|
 
   # == Filters
   #
-  # By default the index screen includes a "Filters" sidebar on the right
+  # By default the bla screen includes a "Filters" sidebar on the right
   # hand side with a filter for each attribute of the registered model.
   # You can enable or disable them for all resources here.
   #

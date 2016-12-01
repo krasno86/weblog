@@ -36,10 +36,10 @@ RSpec.describe PicturesController, type: :controller do
   # PicturesController. Be sure to keep this updated too.
   let(:valid_session) { {} }
 
-  describe "GET #index" do
+  describe "GET #bla" do
     it "assigns all pictures as @pictures" do
       picture = Picture.create! valid_attributes
-      get :index, params: {}, session: valid_session
+      get :bla, params: {}, session: valid_session
       expect(assigns(:pictures)).to eq([picture])
     end
   end

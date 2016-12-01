@@ -10,7 +10,7 @@ class CategoriesController < ApplicationController
   def show
     #render layout: false
     #@pictures = Picture.find(params[:id])
-    @pictures = @category.pictures
+    @pictures = @category.pictures.comments
     # Picture.where(category_id: params[:id])
 
   end

@@ -5,15 +5,29 @@ class PicturesController < ApplicationController
   # GET /pictures.json
   def index
     @pictures = Picture.all
-    #render layout: false
+    #@pictures = @picture.comments
+    render layout: false
   end
 
+  def bla
+  end
+
+  def like_picture
+    @pictures = Picture.find(params[:id])
+    @picture.liked_by current_user
+
+  end
+
+  def dislike_picture
+    @pictures = Picture.find(params[:id])
+    @picture.disliked_by current_user
+  end
   # GET /pictures/1
   # GET /pictures/1.json
-  # def show
-  #   @pictures = Picture.find(params[:id])
-  #
-  # end
+  def show
+    @pictures = Picture.find(params[:id])
+
+  end
 
   # GET /pictures/new
   def new
@@ -29,30 +43,30 @@ class PicturesController < ApplicationController
   def create
     @picture = Picture.new(picture_params)
 
-    respond_to do |format|
-      if @picture.save
-        format.html { redirect_to @picture, notice: 'Picture was successfully created.' }
-        format.json { render :show, status: :created, location: @picture }
-      else
-        format.html { render :new }
-        format.json { render json: @picture.errors, status: :unprocessable_entity }
-      end
-    end
+    # respond_to do |format|
+    #   if @picture.save
+    #     format.html { redirect_to @picture, notice: 'Picture was successfully created.' }
+    #     format.json { render :show, status: :created, location: @picture }
+    #   else
+    #     format.html { render :new }
+    #     format.json { render json: @picture.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   # PATCH/PUT /pictures/1
   # PATCH/PUT /pictures/1.json
-  def update
-    respond_to do |format|
-      if @picture.update(picture_params)
-        format.html { redirect_to @picture, notice: 'Picture was successfully updated.' }
-        format.json { render :show, status: :ok, location: @picture }
-      else
-        format.html { render :edit }
-        format.json { render json: @picture.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+  # def update
+  #   respond_to do |format|
+  #     if @picture.update(picture_params)
+  #       format.html { redirect_to @picture, notice: 'Picture was successfully updated.' }
+  #       format.json { render :show, status: :ok, location: @picture }
+  #     else
+  #       format.html { render :edit }
+  #       format.json { render json: @picture.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
 
   # DELETE /pictures/1
   # DELETE /pictures/1.json

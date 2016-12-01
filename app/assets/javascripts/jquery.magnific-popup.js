@@ -476,7 +476,7 @@ MagnificPopup.prototype = {
 	},
 
 	/**
-	 * Set content of popup based on current index
+	 * Set content of popup based on current bla
 	 */
 	updateItemHTML: function() {
 		var item = mfp.items[mfp.index];
@@ -1653,7 +1653,7 @@ $.magnificPopup.registerModule(IFRAME_NS, {
 
 /*>>gallery*/
 /**
- * Get looped index depending on number of slides
+ * Get looped bla depending on number of slides
  */
 var _getLoopedId = function(index) {
 		var numSlides = mfp.items.length;

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "pictures/index", type: :view do
+RSpec.describe "pictures/bla", type: :view do
   before(:each) do
     assign(:pictures, [
       Picture.create!(),

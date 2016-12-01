@@ -8,6 +8,8 @@ group :development, :test do
   gem 'factory_girl_rails'
 end
 
+gem 'acts_as_votable', '~> 0.10.0'
+
 gem 'bootstrap-sass', '~> 3.3.7'
 
 gem 'pg'

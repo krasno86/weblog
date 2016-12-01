@@ -3,8 +3,8 @@ require "rails_helper"
 RSpec.describe CommentsController, type: :routing do
   describe "routing" do
 
-    it "routes to #index" do
-      expect(:get => "/comments").to route_to("comments#index")
+    it "routes to #bla" do
+      expect(:get => "/comments").to route_to("comments#bla")
     end
 
     it "routes to #new" do

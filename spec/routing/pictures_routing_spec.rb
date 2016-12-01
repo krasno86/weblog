@@ -3,8 +3,8 @@ require "rails_helper"
 RSpec.describe PicturesController, type: :routing do
   describe "routing" do
 
-    it "routes to #index" do
-      expect(:get => "/pictures").to route_to("pictures#index")
+    it "routes to #bla" do
+      expect(:get => "/pictures").to route_to("pictures#bla")
     end
 
     it "routes to #new" do

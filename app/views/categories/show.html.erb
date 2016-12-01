@@ -9,15 +9,16 @@
           <h3><p><%= picture.title %></p></h3>
           <h3 class="page-header">Comments:</h3>
           <p><span class="glyphicon glyphicon-time"></span> Posted on <%= Time.now.strftime("%Y-%m-%d" "," "%H:%M:%S")%></p>
-          <%= link_to new_picture_comment_path(picture), class: 'btn btn-primary' do %>
+          <%#= link_to new_picture_comment_path(picture), class: 'btn btn-primary' do %>
+          <%= render "comments/form"%>
               Comments<span class="glyphicon glyphicon-chevron-right"></span>
 
           <% end %>
-          <h2>
-            <td><%#= link_to 'Destroy', picture_path(article.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-          </h2>
+          <!--<h2>-->
+            <!--<td><%#= link_to 'Destroy', picture_path(article.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
+          <!--</h2>-->
 
-      <% end %>
+      <%#end %>
     </div>
   </div>
 </body>
