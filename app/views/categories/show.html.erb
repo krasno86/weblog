@@ -39,40 +39,27 @@
           </li>
           </ul>
     </div>
-    <!-- /.navbar-collapse -->
   </div>
-  <!-- /.container-fluid -->
 </nav>
 
-<!-- jQuery -->
-
-<!-- Theme JavaScript -->
 <br><br><br><br>
 
 <div class="header-content">
     <div class="header-content-inner">
-
       <% @category.pictures.each do |picture| %>
-
           <h2><%= picture.title %></h2>
           <p><%= image_tag(picture.avatar)  %></p>
-          <h3><p><%= picture.title %></p></h3>
-          <h3 class="page-header">Comments:</h3>
           <p><span class="glyphicon glyphicon-time"></span> Posted on <%= Time.now.strftime("%Y-%m-%d" "," "%H:%M:%S")%></p>
-          <%#= link_to new_picture_comment_path(picture), class: 'btn btn-primary' do %>
-          <p><%= picture.comments.each do |comment|%>
-                <!--Comments<span class="glyphicon glyphicon-chevron-right"></span>-->
-                <%= render partial: "comments/form/", locals: {'@comments' => comment}%>
-            <% end %></p>
-          <a class="btn btn-default glyphicon glyphicon-hand-up"></a>
-          </div>
+          <h3 class="page-header">Comments:</h3>
+          <% picture.comments.each do |comment|%>
+          <p><%= comment.text%>
+          </p>
           <% end %>
-          <!--<h2>-->
-            <!--<td><%#= link_to 'Destroy', picture_path(article.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
-          <!--</h2>-->
-
-      <%#end %>
+          <%= render partial: "comments/form/", locals: {:@comment => picture.comments.build } %>
+          </div>
+      <% end %>
     </div>
   </div>
-
 </body>
+
+

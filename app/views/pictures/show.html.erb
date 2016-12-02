@@ -83,9 +83,7 @@
         <%=link_to "Like", likes_pictures_path(@pictures), class: 'glyphicon glyphicon-thumbs-up like'%>
         <p><span class="glyphicon glyphicon-time"></span> Posted on <%= Time.now.strftime("%Y-%m-%d" "," "%H:%M:%S")%></p>
         <h3 class="page-header">Comments:</h3>
-        <%#= link_to new_picture_comment_path(picture), class: 'btn btn-primary' do %>
         <% @picture.comments.each do |comment|%>
-              <!--Comments<span class="glyphicon glyphicon-chevron-right"></span>-->
         <p><%= comment.text%>
           <% end %>
         </p>

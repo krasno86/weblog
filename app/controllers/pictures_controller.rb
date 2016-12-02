@@ -26,6 +26,7 @@ class PicturesController < ApplicationController
   # GET /pictures/1.json
   def show
     @pictures = Picture.find(params[:id])
+
     render layout: false
   end
 
