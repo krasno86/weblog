@@ -1,4 +1,55 @@
-  <div class="header-content">
+<body id="page-top">
+
+<nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+      </button>
+      <a class="navbar-brand page-scroll" href="#page-top">Bootstrap</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a>
+          <% if user_signed_in? %>Здравствуйте, <%= current_user.email %>
+              </a></li>
+              <li>
+                <%= link_to 'Выйти', destroy_user_session_path, :method => :delete %><% else %>
+              </li>
+              <li>
+                <%= link_to 'Войти', new_user_session_path %>
+              </li>
+              <li><%= link_to 'Зарегистрироваться', new_user_registration_path %>
+              </li>
+          <% end %>
+          <li>
+            <a class="page-scroll" href="/categories#index">Категории</a>
+          </li>
+          <li>
+            <a class="page-scroll" href="/pictures#index">Фото</a>
+          </li>
+          <li>
+            <a class="page-scroll" href="/coments#index">Коментарии</a>
+          </li>
+          <li>
+            <a class="page-scroll" href="/userAction#index">Действия пользователя</a>
+          </li>
+          </ul>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container-fluid -->
+</nav>
+
+<!-- jQuery -->
+
+<!-- Theme JavaScript -->
+<header><br><br>
+
+<div class="header-content">
     <div class="header-content-inner">
       <h1 id="homeHeading">Your Favorite Source</h1>
       <hr>
@@ -10,9 +61,12 @@
           <h3 class="page-header">Comments:</h3>
           <p><span class="glyphicon glyphicon-time"></span> Posted on <%= Time.now.strftime("%Y-%m-%d" "," "%H:%M:%S")%></p>
           <%#= link_to new_picture_comment_path(picture), class: 'btn btn-primary' do %>
-          <%= render "comments/form"%>
-              Comments<span class="glyphicon glyphicon-chevron-right"></span>
-
+          <p><%= picture.comments.each do |comment|%>
+                <!--Comments<span class="glyphicon glyphicon-chevron-right"></span>-->
+                <%= render partial: "comments/form/", locals: comment%>
+            <% end %></p>
+          <a class="btn btn-default glyphicon glyphicon-hand-up"></a>
+          </div>
           <% end %>
           <!--<h2>-->
             <!--<td><%#= link_to 'Destroy', picture_path(article.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
@@ -21,4 +75,5 @@
       <%#end %>
     </div>
   </div>
+</header>
 </body>

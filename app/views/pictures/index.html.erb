@@ -85,13 +85,17 @@
         <%@pictures.each do |picture| %>
             <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
               <p><%= picture.title %></p>
-              <%= image_tag(picture.avatar, size: "128x128", alt: "Edit Entry")  %>
+              <%=link_to pictures_path(picture.id), :id => picture.id, class:"portfolio-box" do %>
+                <%= image_tag(picture.avatar, size: "128x128", alt: "Edit Entry")  %>
+              <%end %>
               <h3 class="page-header">Comments:</h3>
               <!--<p><span class="glyphicon glyphicon-time"></span> Posted on <%#= Time.now.strftime("%Y-%m-%d" "," "%H:%M:%S")%></p>-->
               <p><%= picture.comments.each do |comment|%>
               <!--Comments<span class="glyphicon glyphicon-chevron-right"></span>-->
+                    <%= render partial: "comments/form/", locals: comment%>
                 <% end %></p>
-              <p><%= picture.likes %></p>
+
+             <%#= link_to likes_pictures_path%>
               <a class="btn btn-default glyphicon glyphicon-hand-up"></a>
             </div>
         <%end %>

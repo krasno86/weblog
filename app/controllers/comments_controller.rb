@@ -9,7 +9,7 @@ class CommentsController < ApplicationController
   # POST /comments.json
   def create
     @picture = Picture.find(params[:picture_id])
-    @comment = @picture.comments.create(comment_params)
+    @comment = @picture.comment.create(comment_params)
     redirect_to pictures_path(@picture)
     # respond_to do |format|
     #   if @comment.save

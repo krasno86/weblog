@@ -9,9 +9,9 @@ class CategoriesController < ApplicationController
 
   def show
     #render layout: false
-    #@pictures = Picture.find(params[:id])
-    @pictures = @category.pictures.comments
-    # Picture.where(category_id: params[:id])
+     @category = Category.find(params[:id])
+    # @category = @category.pictures.comments
+    #@category = Picture.where(category_id: params[:id])
 
   end
 
