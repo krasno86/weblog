@@ -8,6 +8,11 @@ body {
   height: 100%;
   width: 100%;
 }
+.pagination {
+    float: left;
+    font-size: 0.9em;
+    margin-left: 10px;
+}
 body {
   font-family: 'Merriweather', 'Helvetica Neue', Arial, sans-serif;
 }

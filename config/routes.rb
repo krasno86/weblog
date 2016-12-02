@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   get 'likes_pictures', to: 'pictures#likes_pictures'
   # get 'bla', to: 'pictures#bla'
 
+
+
   resources :pictures
 
   root 'pictures#bla'

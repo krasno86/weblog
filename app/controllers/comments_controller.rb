@@ -10,6 +10,7 @@ class CommentsController < ApplicationController
   def create
     @picture = Picture.find(params[:picture_id])
     @comment = @picture.comment.create(comment_params)
+    #@comment = @category.picture.comments.create(comment_params)
     redirect_to pictures_path(@picture)
     # respond_to do |format|
     #   if @comment.save
@@ -21,7 +22,7 @@ class CommentsController < ApplicationController
     #   end
     # end
   end
-
+category_picture_comments
 
   # DELETE /comments/1
   # DELETE /comments/1.json

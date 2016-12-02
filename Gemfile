@@ -20,7 +20,7 @@ gem 'carrierwave', '>= 1.0.0.rc'
 
 gem 'rspec'
 
-gem 'kaminari', '~> 0.16.3'
+gem 'kaminari',  '0.17.0'
 
 gem 'activeadmin', github: 'activeadmin'
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'

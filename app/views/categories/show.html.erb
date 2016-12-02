@@ -1,4 +1,4 @@
-<body id="page-top">
+<body style="background-color: burlywood ">
 
 <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
@@ -47,12 +47,11 @@
 <!-- jQuery -->
 
 <!-- Theme JavaScript -->
-<header><br><br>
+<br><br><br><br>
 
 <div class="header-content">
     <div class="header-content-inner">
-      <h1 id="homeHeading">Your Favorite Source</h1>
-      <hr>
+
       <% @category.pictures.each do |picture| %>
 
           <h2><%= picture.title %></h2>
@@ -63,7 +62,7 @@
           <%#= link_to new_picture_comment_path(picture), class: 'btn btn-primary' do %>
           <p><%= picture.comments.each do |comment|%>
                 <!--Comments<span class="glyphicon glyphicon-chevron-right"></span>-->
-                <%= render partial: "comments/form/", locals: comment%>
+                <%= render partial: "comments/form/", locals: {'@comments' => comment}%>
             <% end %></p>
           <a class="btn btn-default glyphicon glyphicon-hand-up"></a>
           </div>
@@ -75,5 +74,5 @@
       <%#end %>
     </div>
   </div>
-</header>
+
 </body>

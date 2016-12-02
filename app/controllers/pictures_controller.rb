@@ -4,7 +4,7 @@ class PicturesController < ApplicationController
   # GET /pictures
   # GET /pictures.json
   def index
-    @pictures = Picture.all
+    @pictures = Picture.all.page(params[:page]).per(5)
     #@pictures = @picture.comments
     render layout: false
   end
@@ -26,7 +26,7 @@ class PicturesController < ApplicationController
   # GET /pictures/1.json
   def show
     @pictures = Picture.find(params[:id])
-
+    render layout: false
   end
 
   # GET /pictures/new
