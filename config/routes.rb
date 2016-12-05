@@ -10,12 +10,16 @@ Rails.application.routes.draw do
     end
   end
 
-  get 'likes_pictures', to: 'pictures#likes_pictures'
-  # get 'bla', to: 'pictures#bla'
+  # get 'pictures/:id/like_picture', to: 'pictures#likes_pictures', as: :likes_pictures
 
 
+  get 'all_comments', to: 'comments#index'
 
-  resources :pictures
+  resources :pictures do
+    member do
+      get :like
+    end
+  end
 
   root 'pictures#bla'
 

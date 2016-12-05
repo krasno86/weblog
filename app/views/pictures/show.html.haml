@@ -1,6 +1,21 @@
-%p#notice= notice
+%body{:style => "background-color: burlywood "}
+  %br/
+  %br/
+  %br/
+  %br/
+  .header-content
+    .header-content-inner
+      %h2= @picture.title
+      %p= image_tag(@picture.avatar)
+      = link_to "Like", like_picture_path(id: @picture.id), class: 'glyphicon glyphicon-thumbs-up like'
+      %p summary likes:
+      %p= @picture.likes.size
+      %p
+        %span.glyphicon.glyphicon-time
+        Posted on #{@picture.created_at}
+      %h3.page-header Comments:
+      - @picture.comments.each do |comment|
+        %p
+          = comment.text
+      = render partial: "comments/form/", locals: {:@comment => @picture.comments.build }
 
-
-= link_to 'Edit', edit_picture_path(@picture)
-\|
-= link_to 'Back', pictures_path

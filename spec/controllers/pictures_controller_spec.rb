@@ -47,7 +47,7 @@ RSpec.describe PicturesController, type: :controller do
   describe "GET #show" do
     it "assigns the requested picture as @picture" do
       picture = Picture.create! valid_attributes
-      get :show, params: {id: picture.to_param}, session: valid_session
+      get :!, params: {id: picture.to_param}, session: valid_session
       expect(assigns(:picture)).to eq(picture)
     end
   end

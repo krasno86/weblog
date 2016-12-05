@@ -47,7 +47,7 @@ RSpec.describe PostsController, type: :controller do
   describe "GET #show" do
     it "assigns the requested post as @post" do
       post = Post.create! valid_attributes
-      get :show, params: {id: post.to_param}, session: valid_session
+      get :!, params: {id: post.to_param}, session: valid_session
       expect(assigns(:post)).to eq(post)
     end
   end

@@ -47,7 +47,7 @@ RSpec.describe CommentsController, type: :controller do
   describe "GET #show" do
     it "assigns the requested comment as @comment" do
       comment = Comment.create! valid_attributes
-      get :show, params: {id: comment.to_param}, session: valid_session
+      get :!, params: {id: comment.to_param}, session: valid_session
       expect(assigns(:comment)).to eq(comment)
     end
   end

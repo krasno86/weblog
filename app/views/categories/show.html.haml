@@ -1,0 +1,16 @@
+%body{:style => "background-color: burlywood "}
+%br/
+%br/
+%br/
+%br/
+  - @category.pictures.each do |picture|
+    %h2= picture.title
+    %p= image_tag(picture.avatar)
+    %p
+      %span.glyphicon.glyphicon-time
+      Posted on #{Time.now.strftime("%Y-%m-%d" "," "%H:%M:%S")}
+    %h3.page-header Comments:
+    - picture.comments.each do |comment|
+      %p
+        = comment.text
+    = render partial: "comments/form/", locals: {:@comment => picture.comments.build }

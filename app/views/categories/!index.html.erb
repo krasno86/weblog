@@ -38,19 +38,12 @@
           </li>
           </ul>
     </div>
-    <!-- /.navbar-collapse -->
   </div>
-  <!-- /.container-fluid -->
 </nav>
-
 
 <br><br><br><br>
 <% @categories.each do |category| %>
-
-
-
-
-      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
         <!--<a href="<%#= category_path(category) %>" class="portfolio-box">-->
         <%=link_to category_path(category.id), :id => category.id, class:"portfolio-box" do %>
           <%= image_tag(category.pictures.order("RANDOM()").first.avatar.url, class: "img-responsive", alt: "", size: "650x350")%>
@@ -65,9 +58,6 @@
             </div>
           </div>
         <% end %>
-
-
   </div>
-
-  <% end %>
+<% end %>
 

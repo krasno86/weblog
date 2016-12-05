@@ -1,17 +1,14 @@
 class CommentsController < ApplicationController
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
-
   # GET /comments
   # GET /comments.json
-
-
   # POST /comments
   # POST /comments.json
   def create
     @picture = Picture.find(params[:picture_id])
-    @comment = @picture.comment.create(comment_params)
+    @comments = @picture.comments.create(comment_params)
     #@comment = @category.picture.comments.create(comment_params)
-    redirect_to pictures_path(@picture)
+    #redirect_to pictures_path(@picture)
     # respond_to do |format|
     #   if @comment.save
     #     format.html { redirect_to @comment, notice: 'Comment was successfully created.' }
@@ -21,9 +18,22 @@ class CommentsController < ApplicationController
     #     format.json { render json: @comment.errors, status: :unprocessable_entity }
     #   end
     # end
-  end
-category_picture_comments
 
+    # @comment = current_user.comment.build(micropost_params)
+    # if @comment.save
+    #   #flash[:success] = 'Comment created!'
+    #   redirect_to root_url
+  end
+
+  def index
+    #render layout: false
+    #@picture = Picture.find(params[:picture_id])
+    #@comments = @picture.comments.find(params[:id])
+    @comments = Comment.all
+
+  end
+
+#category_picture_comments
   # DELETE /comments/1
   # DELETE /comments/1.json
   def destroy

@@ -1,5 +1,5 @@
 class PicturesController < ApplicationController
-  before_action :set_picture, only: [:show, :edit, :update, :destroy]
+  before_action :set_picture, only: [:!, :edit, :update, :destroy]
 
   # GET /pictures
   # GET /pictures.json
@@ -12,22 +12,23 @@ class PicturesController < ApplicationController
   def bla
   end
 
-  def like_picture
-    @pictures = Picture.find(params[:id])
+  def like
+    @picture = Picture.find(params[:id])
     @picture.liked_by current_user
-
+    redirect_to @picture
   end
 
   def dislike_picture
-    @pictures = Picture.find(params[:id])
+    @picture = Picture.find(params[:id])
     @picture.disliked_by current_user
   end
   # GET /pictures/1
   # GET /pictures/1.json
   def show
-    @pictures = Picture.find(params[:id])
+    #@likes=Like.all
+    @picture = Picture.find(params[:id])
 
-    render layout: false
+    #render layout: false
   end
 
   # GET /pictures/new
@@ -43,7 +44,11 @@ class PicturesController < ApplicationController
   # POST /pictures.json
   def create
     @picture = Picture.new(picture_params)
-
+    if @picture.save
+      redirect_to @picture
+    else
+      render 'new'
+    end
     # respond_to do |format|
     #   if @picture.save
     #     format.html { redirect_to @picture, notice: 'Picture was successfully created.' }

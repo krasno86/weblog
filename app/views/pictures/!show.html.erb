@@ -1,0 +1,20 @@
+<body style="background-color: burlywood ">
+
+<br><br><br><br><br><br>
+
+<div class="header-content">
+  <div class="header-content-inner">
+        <h2><%= @picture.title %></h2>
+        <p><%= image_tag(@picture.avatar)  %></p>
+        <%=link_to "Like", likes_pictures_path(@pictures), class: 'glyphicon glyphicon-thumbs-up like'%>
+        <p><span class="glyphicon glyphicon-time"></span> Posted on <%= Time.now.strftime("%Y-%m-%d" "," "%H:%M:%S")%></p>
+        <h3 class="page-header">Comments:</h3>
+        <% @picture.comments.each do |comment|%>
+        <p><%= comment.text%>
+          <% end %>
+        </p>
+        <%= render partial: "comments/form/", locals: {:@comment => @picture.comments.build } %>
+  </div>
+</div>
+
+</body>
