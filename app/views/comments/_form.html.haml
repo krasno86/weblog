@@ -4,14 +4,3 @@
     %br/
     = f.text_field :text
   = f.submit
--#= form_for(@picture.comments.build, url: category_picture_comments_path(@picture)) do |f|
-
--#= form_for([@picture, @picture.comments.build]) do |f|
--#= form_for(@article.comments.build, url: article_comments_path(@article)) do |f|
--#= form_for(@picture.comments, url: category_picture_comments_path({category_id: 0, picture_id: 0})) do |f|
--#= form_for(@picture.comments, url: category_picture_comments_path({category_id: 0, picture_id: 0})) do |f|
--#  %p
--#    = f.label :text
--#    %br/
--#    = f.text_field :text
--#  = f.submit

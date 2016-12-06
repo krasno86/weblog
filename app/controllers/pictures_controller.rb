@@ -1,12 +1,8 @@
 class PicturesController < ApplicationController
   before_action :set_picture, only: [:!, :edit, :update, :destroy]
 
-  # GET /pictures
-  # GET /pictures.json
   def index
     @pictures = Picture.all.page(params[:page]).per(5)
-    #@pictures = @picture.comments
-    render layout: false
   end
 
   def bla
@@ -37,12 +33,6 @@ class PicturesController < ApplicationController
     @picture = Picture.new
   end
 
-  # GET /pictures/1/edit
-  def edit
-  end
-
-  # POST /pictures
-  # POST /pictures.json
   def create
     @picture = Picture.new(picture_params)
     if @picture.save
