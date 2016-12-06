@@ -15,12 +15,13 @@ class PicturesController < ApplicationController
   def like
     @picture = Picture.find(params[:id])
     @picture.liked_by current_user
-    redirect_to @picture
+    redirect_to :back
   end
 
   def dislike_picture
     @picture = Picture.find(params[:id])
     @picture.disliked_by current_user
+    redirect_to :back
   end
   # GET /pictures/1
   # GET /pictures/1.json

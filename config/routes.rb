@@ -10,15 +10,21 @@ Rails.application.routes.draw do
     end
   end
 
+  post 'pictures/:picture_id/comments', to: 'comments#create', as: :picture_comments
+
   # get 'pictures/:id/like_picture', to: 'pictures#likes_pictures', as: :likes_pictures
 
 
   get 'all_comments', to: 'comments#index'
+get 
+  # resources :pictures do
+  #   member do
+  #     get :like
+  #   end
+  # end
 
   resources :pictures do
-    member do
-      get :like
-    end
+    resource :like
   end
 
   root 'pictures#bla'
