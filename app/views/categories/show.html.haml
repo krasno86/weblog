@@ -3,11 +3,17 @@
 %br/
 %br/
 %br/
+%br/
+%br/
 - @category.pictures.each do |picture|
   %h2= picture.title
-  = link_to picture_path(picture.id), :id => picture.id, class:"portfolio-box" do
+  = link_to picture_by_category_path(category_name: picture.category.name, id: picture.id) do
     = image_tag((picture.avatar), class: "img-responsive", alt: "", size: "350x250")
-  %p summary likes: #{picture.likes.size}
+  -#%br
+  -#%br
+  -#%br
+  -#%br
+  -#%p summary likes: #{picture.likes.size}
   -#%p comments: #{@comment.size}
 
 

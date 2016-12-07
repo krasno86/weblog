@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
 
-  before_action :set_comment, only: [:show, :edit, :update, :destroy]
+  before_action :set_comment, only: [:show, :create]
 
   def create
     @picture = Picture.find(params[:picture_id])
@@ -13,14 +13,15 @@ class CommentsController < ApplicationController
     @comments = Comment.all
   end
 
-  def destroy
-    @picture = Picture.find(params[:picture_id])
-    @comment = @picture.comments.create(comment_params)
-    @comment.destroy
-    redirect_to pictures_path(@picture)
-  end
+  # def destroy
+  #   @picture = Picture.find(params[:picture_id])
+  #   @comment = @picture.comments.create(comment_params)
+  #   @comment.destroy
+  #   redirect_to pictures_path(@picture)
+  # end
 
   private
+
     def set_comment
       @comment = Comment.find(params[:id])
     end

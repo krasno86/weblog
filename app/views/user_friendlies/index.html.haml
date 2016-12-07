@@ -1,0 +1,23 @@
+%h1 Listing user_friendlies
+
+%table
+  %thead
+    %tr
+      %th Name
+      %th Slug
+      %th
+      %th
+      %th
+
+  %tbody
+    - @user_friendlies.each do |user_friendly|
+      %tr
+        %td= user_friendly.name
+        %td= user_friendly.slug
+        %td= link_to 'Show', user_friendly
+        %td= link_to 'Edit', edit_user_friendly_path(user_friendly)
+        %td= link_to 'Destroy', user_friendly, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New User friendly', new_user_friendly_path

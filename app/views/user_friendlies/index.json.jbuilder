@@ -1,0 +1,1 @@
+json.array! @user_friendlies, partial: 'user_friendlies/user_friendly', as: :user_friendly

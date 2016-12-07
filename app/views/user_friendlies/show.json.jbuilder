@@ -1,0 +1,1 @@
+json.partial! "user_friendlies/user_friendly", user_friendly: @user_friendly

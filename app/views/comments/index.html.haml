@@ -5,13 +5,13 @@
 %br/
 %h3.page-header Comments:
 - @comments.each do |comment|
-  .col-lg-2.col-md-2.col-sm-2.col-xs-2
-    %p = comment.created_at
-    %p = comment.text
-    = render partial: "comments/form/", locals: {:@comments => @picture.comment.build }
+    %p= comment.text
+    -#=link_to 'picture link', picture_path(comment.picture, comment.picture.id)
+    -#%p= comment.created_at
+
+
     -#= link_to picture_path(picture.id), :id => picture.id, class:"portfolio-box" do
     -#  = image_tag(picture.avatar, size: "128x128", alt: "Edit Entry")
 
-    / <p><span class="glyphicon glyphicon-time"></span> Posted on <haml_silent></haml_silent></p>
 
 
