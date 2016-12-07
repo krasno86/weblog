@@ -19,16 +19,12 @@ class PicturesController < ApplicationController
     @picture.disliked_by current_user
     redirect_to :back
   end
-  # GET /pictures/1
-  # GET /pictures/1.json
+
   def show
     #@likes=Like.all
     @picture = Picture.find(params[:id])
-
-    #render layout: false
   end
 
-  # GET /pictures/new
   def new
     @picture = Picture.new
   end

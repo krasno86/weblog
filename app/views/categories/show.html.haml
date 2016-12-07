@@ -5,15 +5,28 @@
 %br/
 - @category.pictures.each do |picture|
   %h2= picture.title
-  %p= image_tag(picture.avatar)
-  -#= link_to "Like", picture_like_path(picture_id: picture.id), method: :post, class: 'glyphicon glyphicon-thumbs-up like'
-  = link_to "Like", picture_like_path(picture_id: picture.id), method: :post, class: 'glyphicon glyphicon-thumbs-up like'
+  = link_to picture_path(picture.id), :id => picture.id, class:"portfolio-box" do
+    = image_tag((picture.avatar), class: "img-responsive", alt: "", size: "350x250")
   %p summary likes: #{picture.likes.size}
-  %p
-    %span.glyphicon.glyphicon-time
-    Posted on #{picture.created_at}
-  %h3.page-header Comments:
-  - picture.comments.each do |comment|
-    %p
-      = comment.text
-  = render partial: "comments/form/", locals: {:@comment => picture.comments.build }
+  -#%p comments: #{@comment.size}
+
+
+
+    -#%body{:style => "background-color: burlywood "}
+  -#%br/
+  -#%br/
+  -#%br/
+  -#%br/
+  -#- @category.pictures.each do |picture|
+  -#  %h2= picture.title
+  -#  %p= image_tag(picture.avatar)
+  -#  = link_to "Like", picture_like_path(picture_id: picture.id), method: :post, class: 'glyphicon glyphicon-thumbs-up like'
+  -#  %p summary likes: #{picture.likes.size}
+  -#  %p
+  -#    %span.glyphicon.glyphicon-time
+  -#    Posted on #{picture.created_at}
+  -#  %h3.page-header Comments:
+  -#  - picture.comments.each do |comment|
+  -#    %p
+  -#      = comment.text
+  -#  = render partial: "comments/form/", locals: {:@comment => picture.comments.build }
