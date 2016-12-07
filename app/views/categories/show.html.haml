@@ -6,6 +6,7 @@
 - @category.pictures.each do |picture|
   %h2= picture.title
   %p= image_tag(picture.avatar)
+  -#= link_to "Like", picture_like_path(picture_id: picture.id), method: :post, class: 'glyphicon glyphicon-thumbs-up like'
   = link_to "Like", picture_like_path(picture_id: picture.id), method: :post, class: 'glyphicon glyphicon-thumbs-up like'
   %p summary likes: #{picture.likes.size}
   %p

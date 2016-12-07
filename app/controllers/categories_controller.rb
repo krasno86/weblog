@@ -9,10 +9,8 @@ class CategoriesController < ApplicationController
 
   def show
     #render layout: false
-     @category = Category.find(params[:id])
-    # @category = @category.pictures.comments
-    #@category = Picture.where(category_id: params[:id])
-
+     #@category = Category.find(params[:id])
+     @category = Category.find_by_name(params[:id])
   end
 
   def index
