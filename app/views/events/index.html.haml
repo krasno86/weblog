@@ -3,5 +3,11 @@
 %br/
 %br/
 %br/
+%h1.text-center All users:
 - @users.each do |user|
-  %p= user.email
+  %h3.page-header User: #{current_user.email} | user sign in: #{user.current_sign_in_at}
+  -#%p Comments: #{user.comments.last.text}
+  %p Comments:
+  %p
+    - user.comments.each do |comment|
+      %p= comment.text

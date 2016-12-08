@@ -39,7 +39,7 @@ RSpec.describe PostsController, type: :controller do
   describe "GET #bla" do
     it "assigns all posts as @posts" do
       post = Post.create! valid_attributes
-      get :bla, params: {}, session: valid_session
+      get :!, params: {}, session: valid_session
       expect(assigns(:posts)).to eq([post])
     end
   end

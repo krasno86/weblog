@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 
   #get 'categories/:id', to: 'categories#show', as: :categories_name
 
-  post 'pictures/:picture_id/comments', to: 'comments#create', as: :picture_comments
+  post 'pictures/comments', to: 'comments#create', as: :picture_comments
 
   get 'all_comments', to: 'comments#index'
 

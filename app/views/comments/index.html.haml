@@ -3,15 +3,25 @@
 %br/
 %br/
 %br/
-%h3.page-header Comments:
+%h1.text-center All comments:
 - @comments.each do |comment|
-    %p= comment.text
-    -#=link_to 'picture link', picture_path(comment.picture, comment.picture.id)
-    -#%p= comment.created_at
-
-
-    -#= link_to picture_path(picture.id), :id => picture.id, class:"portfolio-box" do
-    -#  = image_tag(picture.avatar, size: "128x128", alt: "Edit Entry")
+  %p Comment: #{comment.text}. Create at #{comment.created_at.strftime("%m-%d-%Y - %H:%M")}
+  -if comment.user
+    %p
+      commenter: #{comment.user.email}
 
 
 
+-#%body{:style => "background-color: burlywood "}
+-#%br/
+-#%br/
+-#%br/
+-#%br/
+-#%h1.text-center All comments:
+-#- @users.each do |user|
+-#  %h3.page-header User: #{current_user.email} | user sign in: #{user.current_sign_in_at}
+-#  -#%p Comments: #{user.comments.last.text}
+-#  %p Comments:
+-#  %p
+-#    - user.comments.each do |comment|
+-#      %p= comment.text

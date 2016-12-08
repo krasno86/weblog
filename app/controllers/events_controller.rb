@@ -4,6 +4,7 @@ class EventsController < ApplicationController
 
   def index
     @users = User.all
+#@comments = Comment.includes(:user, picture: :category).order('created_at ASC').page(params[:page]).per 10
   end
 
   private

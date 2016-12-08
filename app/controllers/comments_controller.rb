@@ -1,16 +1,16 @@
 class CommentsController < ApplicationController
 
-  before_action :set_comment, only: [:show, :create]
+  # before_action :set_comment, only: [:show, :create]
 
   def create
-    @picture = Picture.find(params[:picture_id])
-    @comments = @picture.comments.create(comment_params)
-    @comments.save
-    redirect_to :back
+    @comment = current_user.comments.create(comment_params)
+    redirect_back fallback_location: :back
   end
 
   def index
-    @comments = Comment.all
+     @users = User.all
+    # @comments = Comment.all
+    @comments = Comment.includes(:user, picture: :category).order('created_at ASC').page(params[:page]).per 10
   end
 
   # def destroy
