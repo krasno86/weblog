@@ -15,7 +15,7 @@ ActiveAdmin.register Category do
   index do
     column :id
     column :name
-actions
+    actions
   end
 
   permit_params :name, :id

@@ -17,6 +17,7 @@ index do
     column :id
     column :user_id
     column :picture_id
+    actions
   end
 
   permit_params :user_id, :id, :picture_id

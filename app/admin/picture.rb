@@ -15,10 +15,10 @@ ActiveAdmin.register Picture do
 index do
     column :id
     column :title
-    column :category_id
+    column :category
     # column :avatar
     column :comment
-    column :user_id
+    column :user
     actions
   end
 
