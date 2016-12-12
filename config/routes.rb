@@ -1,8 +1,17 @@
 Rails.application.routes.draw do
 
-  #resources :user_friendlies
+  get 'parser/yandex'
+
+  # ActiveAdmin.routes(self)
+  # devise_for :users, ActiveAdmin::Devise.config
+
+  ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  devise_for :users, ActiveAdmin::Devise.config
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+
+  devise_scope :user do
+    delete 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session_omniouth
+  end
 
   root 'pictures#bla'
 
@@ -12,7 +21,7 @@ Rails.application.routes.draw do
     end
   end
 
-  #get 'categories/:id', to: 'categories#show', as: :categories_name
+  get 'parser/juventus', to: 'parser#juventus'
 
   post 'pictures/comments', to: 'comments#create', as: :picture_comments
 

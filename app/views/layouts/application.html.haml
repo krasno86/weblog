@@ -40,7 +40,7 @@
                   = link_to 'Выйти', destroy_user_session_path, :method => :delete
               - else
                 %li
-                = link_to 'Войти', new_user_session_path
+                  = link_to 'Войти', new_user_session_path
             %li
               = link_to 'Зарегистрироваться', new_user_registration_path
             %li
@@ -52,6 +52,8 @@
               -#%a.page-scroll{:href => "/comments#show"} Коментарии
             %li
               = link_to "Действия пользователя", events_path
+            %li
+              = link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path
     / /.navbar-collapse
     / /.container-fluid
     / jQuery

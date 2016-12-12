@@ -2,7 +2,13 @@ source 'https://rubygems.org'
 
 gem 'friendly_id', '~> 5.0'
 
+gem 'nokogiri'
+
 gem 'devise'
+
+gem 'omniauth-facebook'
+
+gem "recaptcha", require: "recaptcha/rails"
 
 gem "font-awesome-rails"
 

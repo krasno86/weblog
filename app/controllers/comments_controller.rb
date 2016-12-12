@@ -1,6 +1,8 @@
 class CommentsController < ApplicationController
 
   # before_action :set_comment, only: [:show, :create]
+  prepend_before_action :check_captcha, only: [:create]
+
 
   def create
     @comment = current_user.comments.create(comment_params)
@@ -29,4 +31,12 @@ class CommentsController < ApplicationController
     def comment_params
       params.require(:comment).permit(:picture_id, :text)
     end
+
+    def check_captcha
+      unless verify_recaptcha
+        self.resource = resource_class.new sign_up_params
+        respond_with_navigational(resource) { render :new }
+      end
+    end
+
 end
