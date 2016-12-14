@@ -13,7 +13,16 @@ Rails.application.routes.draw do
     delete 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session_omniouth
   end
 
-  root 'pictures#bla'
+  scope "/:locale" do
+    resources :categories
+  end
+
+  # get '/:locale' => 'pictures#bla'
+  # root 'pictures#bla'
+
+  get '/:locale' => 'pictures#wellcome'
+  root 'pictures#wellcome'
+  get 'pictures/wellcome', to: 'pictures#wellcome'
 
   resources :categories, only: [:index, :show] do
     resources :pictures, only: [:index] do
@@ -35,5 +44,5 @@ Rails.application.routes.draw do
     resource :like
   end
 
-  get 'persons/profile', as: 'user_root'
+  get 'categories/index', as: 'user_root'
 end

@@ -4,7 +4,7 @@
   %br/
   %br/
   %h2 Sign up
-  = form_for(resource, as: resource_name, url: user_registration_path(resource_name)) do |f|
+  = form_for(resource, as: resource_name, url: user_registration_path()) do |f|
     = devise_error_messages!
     .field
       = f.label :email
@@ -23,4 +23,5 @@
       = f.password_field :password_confirmation, autocomplete: "off"
     = flash[:recaptcha_error]
     = recaptcha_tags
+    = button_tag "Sign up"
   = render "devise/shared/links"

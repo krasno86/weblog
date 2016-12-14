@@ -29,7 +29,7 @@
             %span.sr-only Toggle navigation
             Menu
             %i.fa.fa-bars
-          %a.navbar-brand.page-scroll{:href => "#page-top"} Galery
+          %a.navbar-brand.page-scroll{:href => "/pictures#wellcome"} Galery
         / Collect the nav links, forms, and other content for toggling
         #bs-example-navbar-collapse-1.collapse.navbar-collapse.hide-lg
           %ul.nav.navbar-nav.navbar-right
@@ -49,7 +49,6 @@
               %a.page-scroll{:href => "/pictures#index"} Фото
             %li
               = link_to 'Комментарии', all_comments_path
-              -#%a.page-scroll{:href => "/comments#show"} Коментарии
             %li
               = link_to "Действия пользователя", events_path
             %li

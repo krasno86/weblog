@@ -1,12 +1,21 @@
 class PicturesController < ApplicationController
 
-  before_action :set_picture, only: [:!, :edit, :update, :destroy]
+  before_action :set_locale, :set_picture, only: [:!, :edit, :update, :destroy]
+
+  def set_locale
+    I18n.locale = params[:locale] || I18n.default_locale
+  end
+
+
 
   def index
     @pictures = Picture.all.page(params[:page]).per(5)
   end
 
   def bla
+  end
+
+  def wellcome
   end
 
   def like
