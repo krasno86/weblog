@@ -37,22 +37,24 @@
               - if user_signed_in?
                 %a Здравствуйте, #{current_user.email}
                 %li
-                  = link_to 'Выйти', destroy_user_session_path, :method => :delete
+                  = link_to(t('Выйти'), destroy_user_session_path, :method => :delete)
               - else
                 %li
-                  = link_to 'Войти', new_user_session_path
+                  = link_to(t('Войти'), new_user_session_path)
             %li
-              = link_to 'Зарегистрироваться', new_user_registration_path
+              = link_to(t('Зарегистрироваться'), new_user_registration_path)
             %li
-              %a.page-scroll{:href => "/categories#index"} Категории
+              = link_to(t('Категории'), categories_path)
+              -#%a.page-scroll{:href => "/categories#index"} Категории
             %li
-              %a.page-scroll{:href => "/pictures#index"} Фото
+              = link_to(t('Фото'), pictures_path)
+              -#%a.page-scroll{:href => "/pictures#index"} Фото
             %li
-              = link_to 'Комментарии', all_comments_path
+              = link_to(t('Комментарии'), all_comments_path)
             %li
-              = link_to "Действия пользователя", events_path
+              = link_to(t("Действия пользователя"), events_path)
             %li
-              = link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path
+              = link_to "Войти с помощью Facebook", user_facebook_omniauth_authorize_path
     / /.navbar-collapse
     / /.container-fluid
     / jQuery

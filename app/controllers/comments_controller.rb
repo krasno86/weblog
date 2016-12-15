@@ -3,6 +3,7 @@ class CommentsController < ApplicationController
   # before_action :set_comment, only: [:show, :create]
   prepend_before_action :check_captcha, only: [:create]
 
+  before_filter :authenticate_user!
 
   def create
     @comment = current_user.comments.create(comment_params)

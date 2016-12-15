@@ -13,4 +13,16 @@ class ApplicationController < ActionController::Base
   #redirect_to @application
   end
 
+  def set_locale
+    I18n.locale = params[:locale] || I18n.default_locale
+  end
+
+  def default_url_options
+    if I18n.locale == I18n.default_locale
+      return {locale: nil}
+    else
+      return {locale: I18n.locale}
+    end
+  end
+
 end
