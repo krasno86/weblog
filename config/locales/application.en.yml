@@ -1,0 +1,12 @@
+en:
+  application:
+    menu:
+      gallery: 'Gallery'
+      log_in: 'Login'
+      log_out: 'Log out'
+      sign_in: 'Sign in'
+      categories: 'Categories'
+      pictures: 'Pictures'
+      comments: 'Comments'
+      log_in_with_facebook: 'log in with facebook'
+

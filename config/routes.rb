@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
 
-  get 'parser/yandex'
+  get 'pictures/wellcome', to: 'pictures#wellcome'
+  root 'pictures#wellcome'
 
-  # ActiveAdmin.routes(self)
-  # devise_for :users, ActiveAdmin::Devise.config
+  get 'parser/yandex'
+  get 'users/log_in', to: 'devise/sessions#new'
 
   ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
@@ -14,17 +15,12 @@ Rails.application.routes.draw do
   end
 
   scope '(:locale)', locale: /en|ru/ do
-    get '/:locale' => 'pictures#wellcome', as: :locale_root
-    resources :categories, only: [:index, :show]
-    #resourses :pictures, only: [:wellcome]
+    get '/:locale' => 'pictures#wellcome', as: :locale_root do
+    resources :categories, only: [:index, :show] do
+      resourses :pictures, only: [:wellcome, :index, :show]
+      end
+    end
   end
-
-  # get '/:locale' => 'pictures#bla'
-  # root 'pictures#bla'
-
-
-  root 'pictures#wellcome'
-  get 'pictures/wellcome', to: 'pictures#wellcome'
 
   resources :categories, only: [:index, :show] do
     resources :pictures, only: [:index] do

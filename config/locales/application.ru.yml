@@ -1,0 +1,11 @@
+ru:
+  application:
+    menu:
+      gallery: 'Галерея'
+      log_in: 'Войти'
+      sign_in: 'Зарегистрироваться'
+      log_out: 'Log out'
+      categories: 'Категории'
+      pictures: 'Фото'
+      comments: 'Коментарии'
+      log_in_with_facebook: 'Войти с помощью facebook'

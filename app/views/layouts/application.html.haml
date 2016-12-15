@@ -29,32 +29,33 @@
             %span.sr-only Toggle navigation
             Menu
             %i.fa.fa-bars
-          %a.navbar-brand.page-scroll{:href => "/pictures#wellcome"} Galery
-        / Collect the nav links, forms, and other content for toggling
+          -#= link_to(t('application.menu.gallery'), {controller: 'pictures', action: 'wellcome'} , :class => 'navbar-brand.page-scroll')
+          %a.navbar-brand.page-scroll{:href => "/pictures#wellcome"} Gallery by Krasno
+
         #bs-example-navbar-collapse-1.collapse.navbar-collapse.hide-lg
           %ul.nav.navbar-nav.navbar-right
             %li
               - if user_signed_in?
                 %a Здравствуйте, #{current_user.email}
                 %li
-                  = link_to(t('Выйти'), destroy_user_session_path, :method => :delete)
+                  = link_to(t('application.menu.log_in'), destroy_user_session_path, :method => :delete)
               - else
                 %li
-                  = link_to(t('Войти'), new_user_session_path)
+                  = link_to(t('application.menu.log_out'), users_log_in_path)
             %li
-              = link_to(t('Зарегистрироваться'), new_user_registration_path)
+              = link_to(t('application.menu.sign_in'), new_user_registration_path)
             %li
-              = link_to(t('Категории'), categories_path)
+              = link_to(t('application.menu.categories'), categories_path)
               -#%a.page-scroll{:href => "/categories#index"} Категории
             %li
-              = link_to(t('Фото'), pictures_path)
+              = link_to(t('application.menu.pictures'), pictures_path)
               -#%a.page-scroll{:href => "/pictures#index"} Фото
             %li
-              = link_to(t('Комментарии'), all_comments_path)
+              = link_to(t('application.menu.comments'), all_comments_path)
+            -#%li
+            -#  = link_to(t("Действия пользователя"), events_path)
             %li
-              = link_to(t("Действия пользователя"), events_path)
-            %li
-              = link_to "Войти с помощью Facebook", user_facebook_omniauth_authorize_path
+              = link_to(t('application.menu.log_in_with_facebook'), user_facebook_omniauth_authorize_path)
     / /.navbar-collapse
     / /.container-fluid
     / jQuery
