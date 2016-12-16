@@ -29,19 +29,19 @@
             %span.sr-only Toggle navigation
             Menu
             %i.fa.fa-bars
-          -#= link_to(t('application.menu.gallery'), {controller: 'pictures', action: 'wellcome'} , :class => 'navbar-brand.page-scroll')
-          %a.navbar-brand.page-scroll{:href => "/pictures#wellcome"} Gallery by Krasno
+          = link_to(t('application.menu.gallery'), root_path , :class => 'navbar-brand page-scroll')
+          -#%a.navbar-brand.page-scroll{:href => "/pictures#wellcome"} Gallery by Krasno
 
         #bs-example-navbar-collapse-1.collapse.navbar-collapse.hide-lg
           %ul.nav.navbar-nav.navbar-right
             %li
               - if user_signed_in?
-                %a Здравствуйте, #{current_user.email}
+                %a Hello, #{current_user.email}
                 %li
-                  = link_to(t('application.menu.log_in'), destroy_user_session_path, :method => :delete)
+                  = link_to(t('application.menu.log_out'), destroy_user_session_path, :method => :delete)
               - else
                 %li
-                  = link_to(t('application.menu.log_out'), users_log_in_path)
+                  = link_to(t('application.menu.log_in'), new_user_session_path)
             %li
               = link_to(t('application.menu.sign_in'), new_user_registration_path)
             %li

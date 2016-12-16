@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   root 'pictures#wellcome'
 
   get 'parser/yandex'
+  # post 'users/sign_in', to: 'devise/sessions#create', as: :log_in
   get 'users/log_in', to: 'devise/sessions#new'
-
   ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   end
 
   scope '(:locale)', locale: /en|ru/ do
-    get '/:locale' => 'pictures#wellcome', as: :locale_root do
+    get '/' => 'pictures#wellcome', as: :locale_root do
     resources :categories, only: [:index, :show] do
       resourses :pictures, only: [:wellcome, :index, :show]
       end

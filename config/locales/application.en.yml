@@ -2,7 +2,7 @@ en:
   application:
     menu:
       gallery: 'Gallery'
-      log_in: 'Login'
+      log_in: 'Log in'
       log_out: 'Log out'
       sign_in: 'Sign in'
       categories: 'Categories'
