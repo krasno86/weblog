@@ -6,9 +6,13 @@ Rails.application.routes.draw do
   get 'parser/yandex'
   # post 'users/sign_in', to: 'devise/sessions#create', as: :log_in
   get 'users/log_in', to: 'devise/sessions#new'
+
   ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
+
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+
+  # get 'users/sign_up', to: 'registrations#new'
 
   devise_scope :user do
     delete 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session_omniouth
@@ -23,7 +27,7 @@ Rails.application.routes.draw do
   end
 
   resources :categories, only: [:index, :show] do
-    resources :pictures, only: [:index] do
+    resources :pictures, only: [:index, :show, :wellcome] do
       resource :comments, only: [:index]
     end
   end

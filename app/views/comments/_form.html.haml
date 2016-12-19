@@ -4,4 +4,6 @@
     = f.label :text
     %br/
     = f.text_field :text
+  = flash[:recaptcha_error]
+  = recaptcha_tags
   = f.submit
