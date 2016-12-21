@@ -11,6 +11,8 @@ gem 'devise'
 gem "letter_opener", :group => :development
 
 gem 'omniauth-facebook'
+gem 'omniauth-vk'
+gem 'omniauth-twitter'
 
 gem "recaptcha", require: "recaptcha/rails"
 

@@ -1,4 +1,10 @@
 development:
   facebook:
     app_id: '851771714962637'
-    app_secrets: '7ca6ccf8bdfb759dadbcd0bb238c592c'
+    app_secret: '7ca6ccf8bdfb759dadbcd0bb238c592c'
+  vk:
+    app_id: '5787912'
+    app_secret: 'ItV2PFhwE7oeuYKoo8dU'
+  twitter:
+      app_id: 'QxzqTayyQ9IGOzVdNacVP0vSe'
+      app_secret: 'AuxfIPDfa5RsSTQeHAdovdGlEny0YTueZK3C7O1NKfbZTLyz2q'

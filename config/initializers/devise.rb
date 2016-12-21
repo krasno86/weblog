@@ -7,19 +7,6 @@ Devise.setup do |config|
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
   # config.secret_key = '6f543340f6494e9a74cdd744c4163b23c003f9c6c93bf94e5699edcd4f913a74090ec1b1ec21042bcb2eb790e89e39ff1165b875068484108f141aa1bae8fd97'
-  require 'omniauth-facebook'
-
-  if Rails.env.production?
-    config.omniauth :facebook, ENV['FACEBOOK_APP_ID'], ENV['FACEBOOK_APP_SECRET']
-    # config.omniauth :twitter, ENV['TWITTER_APP_ID'], ENV['TWITTER_APP_SECRET']
-    # config.omniauth :google_oauth2, ENV['GOOGLE_CLIENT_ID'], ENV['GOOGLE_CLIENT_SECRET']
-    # config.omniauth :vk, ENV['VK_API_KEY'], ENV['VK_API_SECRET']
-  else
-    config.omniauth :facebook, APP_CONFIG['facebook']['app_id'], APP_CONFIG['facebook']['app_secrets'], info_fields: 'name,email,link'
-    # config.omniauth :twitter, APP_CONFIG['twitter']['twitter_app_id'], APP_CONFIG['twitter']['twitter_app_secret']
-    # config.omniauth :google_oauth2, APP_CONFIG['google']['google_client_id'], APP_CONFIG['google']['google_client_secret']
-    # config.omniauth :vk,  APP_CONFIG['vkontakte']['vk_app_id'], APP_CONFIG['vkontakte']['vk_app_secret']
-  end
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
@@ -284,4 +271,20 @@ Devise.setup do |config|
   # When using OmniAuth, Devise cannot automatically set OmniAuth path,
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = '/my_engine/users/auth'
+  config.secret_key = ENV['DEVICE_SECRET_KEY']
+
+  require 'omniauth-facebook'
+
+  if Rails.env.production?
+    config.omniauth :facebook, ENV['FACEBOOK_APP_ID'], ENV['FACEBOOK_APP_SECRET']
+    config.omniauth :twitter, ENV['TWITTER_APP_ID'], ENV['TWITTER_APP_SECRET']
+    # config.omniauth :google_oauth2, ENV['GOOGLE_CLIENT_ID'], ENV['GOOGLE_CLIENT_SECRET']
+    config.omniauth :vk, ENV['VK_APP_ID'], ENV['VK_APP_SECRET']
+  else
+    config.omniauth :facebook, APP_CONFIG['facebook']['app_id'], APP_CONFIG['facebook']['app_secret'], info_fields: 'name,email,link'
+    config.omniauth :twitter, APP_CONFIG['twitter']['twitter_app_id'], APP_CONFIG['twitter']['twitter_app_secret']
+    # config.omniauth :google_oauth2, APP_CONFIG['google']['google_client_id'], APP_CONFIG['google']['google_client_secret']
+    config.omniauth :vk,  APP_CONFIG['vk']['vk_app_id'], APP_CONFIG['vk']['vk_app_secret']
+  end
+
 end

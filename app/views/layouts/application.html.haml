@@ -45,6 +45,12 @@
             %li
               = link_to(t('application.menu.sign_in'), new_user_registration_path)
             %li
+              = link_to(t('application.menu.log_in_with_facebook'), user_facebook_omniauth_authorize_path)
+            %li
+              = link_to(t('application.menu.log_in_with_twitter'), user_twitter_omniauth_authorize_path)
+            %li
+              = link_to(t('application.menu.log_in_with_vk'), user_vk_omniauth_authorize_path)
+            %li
               = link_to(t('application.menu.categories'), categories_path)
               -#%a.page-scroll{:href => "/categories#index"} Категории
             %li
@@ -54,8 +60,19 @@
               = link_to(t('application.menu.comments'), all_comments_path)
             -#%li
             -#  = link_to(t("Действия пользователя"), events_path)
-            %li
-              = link_to(t('application.menu.log_in_with_facebook'), user_facebook_omniauth_authorize_path)
+
+
+              -#<select>
+              -#<option>
+              -#= link_to(t('application.menu.log_in_with_facebook'), user_facebook_omniauth_authorize_path)
+              -#</option>
+              -#<option>
+              -#= link_to(t('application.menu.log_in_with_twitter'), user_twitter_omniauth_authorize_path)
+              -#</option>
+              -#<option>
+              -#= link_to(t('application.menu.log_in_with_vk'), user_vk_omniauth_authorize_path)
+              -#</option>
+              -#</select>
     / /.navbar-collapse
     / /.container-fluid
     / jQuery

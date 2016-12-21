@@ -9,3 +9,5 @@ ru:
       pictures: 'Фото'
       comments: 'Коментарии'
       log_in_with_facebook: 'Войти с помощью facebook'
+      log_in_with_twitter: 'Войти с помощью twitter'
+      log_in_with_vk: 'Войти с помощью vk'
