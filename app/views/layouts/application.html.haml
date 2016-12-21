@@ -61,7 +61,15 @@
             -#%li
             -#  = link_to(t("Действия пользователя"), events_path)
 
-
+            %li
+              - if I18n.locale == :en
+                = link_to locale: :ru do
+                  %i.flag.flag-ru
+                  RU
+              - else
+                = link_to locale: :en do
+                  %i.flag.flag-en
+                  EN
               -#<select>
               -#<option>
               -#= link_to(t('application.menu.log_in_with_facebook'), user_facebook_omniauth_authorize_path)

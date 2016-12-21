@@ -56,14 +56,6 @@ ActiveRecord::Schema.define(version: 20161219145824) do
     t.string   "title"
   end
 
-  create_table "user_friendlies", force: :cascade do |t|
-    t.string   "name"
-    t.string   "slug"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["slug"], name: "index_user_friendlies_on_slug", unique: true, using: :btree
-  end
-
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -77,8 +69,6 @@ ActiveRecord::Schema.define(version: 20161219145824) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.string   "provider"
-    t.string   "uid"
     t.string   "confirmation_token"
     t.string   "unconfirmed_email"
     t.datetime "confirmed_at"
