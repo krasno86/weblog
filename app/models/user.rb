@@ -31,9 +31,9 @@ class User < ApplicationRecord
     end
   end
 
-  def self.find_user_by_oauth(uid: nil, provider: nil)
-    return nil unless uid || provider
-    Oauth.find_by(uid: uid, provider: provider)&.user
-  end
+  # def self.find_user_by_oauth(uid: nil, provider: nil)
+  #   return nil unless uid || provider
+  #   Oauth.find_by(uid: uid, provider: provider)&.user
+  # end
 
 end
