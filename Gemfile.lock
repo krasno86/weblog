@@ -337,6 +337,7 @@ DEPENDENCIES
   kaminari (= 0.17.0)
   letter_opener
   nokogiri
+  omniauth
   omniauth-facebook
   omniauth-twitter
   omniauth-vk

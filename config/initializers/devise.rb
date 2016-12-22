@@ -281,7 +281,7 @@ Devise.setup do |config|
     # config.omniauth :google_oauth2, ENV['GOOGLE_CLIENT_ID'], ENV['GOOGLE_CLIENT_SECRET']
     config.omniauth :vk, ENV['VK_APP_ID'], ENV['VK_APP_SECRET']
   else
-    config.omniauth :facebook, APP_CONFIG['facebook']['app_id'], APP_CONFIG['facebook']['app_secret'], info_fields: 'name,email,link'
+    config.omniauth :facebook, APP_CONFIG['facebook']['app_id'], APP_CONFIG['facebook']['app_secret']
     config.omniauth :twitter, APP_CONFIG['twitter']['twitter_app_id'], APP_CONFIG['twitter']['twitter_app_secret']
     # config.omniauth :google_oauth2, APP_CONFIG['google']['google_client_id'], APP_CONFIG['google']['google_client_secret']
     config.omniauth :vk,  APP_CONFIG['vk']['vk_app_id'], APP_CONFIG['vk']['vk_app_secret']
