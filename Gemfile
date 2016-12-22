@@ -6,6 +6,8 @@ gem 'curb', '~> 0.9.3'
 
 gem 'nokogiri'
 
+
+
 gem 'devise'
 
 gem "letter_opener", :group => :development
