@@ -8,7 +8,7 @@
   %br/
   %br/
   %br/
-  %h2 Sign in
+  %h2 Sign up
   = form_for(resource, as: resource_name, url: user_registration_path) do |f|
     = devise_error_messages!
     .field
@@ -29,4 +29,20 @@
     = flash[:recaptcha_error]
     = recaptcha_tags
     = button_tag "Sign up"
+
+  -#%a.btn.btn-social-icon.btn-twitter
+  -#  %span.fa.fa-twitter
+  %br/
+  -#%a.btn.btn-social-icon.btn-facebook
+    %span.fa.fa-facebook
+
+  /= link_to ('log in with facebook'), user_facebook_omniauth_authorize_path, :class => 'btn btn-facebook btn-lg'
+
+  %br/
+
+  %a.btn.btn-facebook.btn-lg{:href => "/users/auth/facebook", :title => "Facebook"}
+    %i.fa.fa-facebook.fa-fw
+    Log in with facebook
+
+  %br/
   = render "devise/shared/links"

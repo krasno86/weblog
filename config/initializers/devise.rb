@@ -273,7 +273,7 @@ Devise.setup do |config|
   # config.omniauth_path_prefix = '/my_engine/users/auth'
   config.secret_key = ENV['DEVICE_SECRET_KEY']
 
-  require 'omniauth-facebook'
+  # require 'omniauth-facebook'
 
   if Rails.env.production?
     config.omniauth :facebook, ENV['FACEBOOK_APP_ID'], ENV['FACEBOOK_APP_SECRET']
@@ -282,9 +282,9 @@ Devise.setup do |config|
     config.omniauth :vk, ENV['VK_APP_ID'], ENV['VK_APP_SECRET']
   else
     config.omniauth :facebook, APP_CONFIG['facebook']['app_id'], APP_CONFIG['facebook']['app_secret']
-    config.omniauth :twitter, APP_CONFIG['twitter']['twitter_app_id'], APP_CONFIG['twitter']['twitter_app_secret']
+    config.omniauth :twitter, APP_CONFIG['twitter']['app_id'], APP_CONFIG['twitter']['app_secret']
     # config.omniauth :google_oauth2, APP_CONFIG['google']['google_client_id'], APP_CONFIG['google']['google_client_secret']
-    config.omniauth :vk,  APP_CONFIG['vk']['vk_app_id'], APP_CONFIG['vk']['vk_app_secret']
+    config.omniauth :vk,  APP_CONFIG['vk']['app_id'], APP_CONFIG['vk']['app_secret']
   end
 
 end

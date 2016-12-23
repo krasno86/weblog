@@ -3,7 +3,7 @@ ru:
     menu:
       gallery: 'Галерея'
       log_in: 'Войти'
-      sign_in: 'Зарегистрироваться'
+      sign_up: 'Зарегистрироваться'
       log_out: 'Log out'
       categories: 'Категории'
       pictures: 'Фото'

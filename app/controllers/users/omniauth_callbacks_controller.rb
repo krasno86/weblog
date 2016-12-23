@@ -20,7 +20,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def facebook
     auth_info = request.env.dig 'omniauth.auth', 'extra', 'raw_info'
     redirect_to root_path, flash: {error: 'Error from Facebook!' } and return unless auth_info
-    @user = User.find_user_by_oauth uid: auth_info['id'], provider: 'facebook'
+    @user = User.find_user_by_oauth(uid: auth_info['id'], provider: 'facebook')
       if @user.present?
         sign_in_and_redirect @user
         set_flash_message(:notice, :success, kind: 'acebook') if is_navigational_format?
@@ -36,60 +36,42 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   end
 
 
-  # def vk
-  #   auth_raw_info = request.env.dig 'omniauth.auth', 'extra', 'raw_info'
-  #   auth_info = request.env.dig 'omniauth.auth', 'info'
-  #   redirect_to root_path, flash: {error: 'Error from Vk!' } and return unless auth_info
-  #   @user = User.find_user_by_oauth uid: auth_raw_info['id'], provider: 'vk'
-  #     if @user.present?
-  #       sign_in_and_redirect @user
-  #       set_flash_message(:notice, :success, kind: 'Vk') if is_navigational_format?
-  #     elsif current_user.present?
-  #       user = current_user
-  #       user.oauths.create uid: auth_raw_info['id'], provider: 'vk', link: "https://vk.com/id#{auth_info['user_id']}"
-  #       sign_in_and_redirect user
-  #       set_flash_message(:notice, :success, kind: 'Vk') if is_navigational_format?
-  #     else
-  #       redirect_to new_user_registration_path
-  #     end
-  # end
-
   def vk
-    auth_info = request.env.dig 'omniauth.auth', 'extra', 'raw_info'
+    auth_raw_info = request.env.dig 'omniauth.auth', 'extra', 'raw_info'
+    auth_info = request.env.dig 'omniauth.auth', 'info'
     redirect_to root_path, flash: {error: 'Error from Vk!' } and return unless auth_info
-    @user = User.find_user_by_oauth uid: auth_info['id'], provider: 'vk'
-    if @user.present?
-      sign_in_and_redirect @user
-      set_flash_message(:notice, :success, kind: 'Vk') if is_navigational_format?
-    elsif current_user.present?
-      user = current_user
-      user.oauths.create uid: auth_raw_info['id'], provider: 'vk', link: "https://vk.com/id#{auth_info['user_id']}"
-      sign_in_and_redirect user
-      set_flash_message(:notice, :success, kind: 'Vk') if is_navigational_format?
-    else
-      redirect_to new_user_registration_path
-    end
+    @user = User.find_user_by_oauth(uid: auth_raw_info['id'], provider: 'vk')
+      if @user.present?
+        sign_in_and_redirect @user
+        set_flash_message(:notice, :success, kind: 'vk') if is_navigational_format?
+      else @user = User.find_by(email: auth_raw_info['email'])
+      if @user.present?
+        @user.oauths.create uid: auth_raw_info['id'], provider: 'vk', link: "https://vk.com/id#{auth_info['user_id']}"
+        sign_in_and_redirect @user
+        set_flash_message(:notice, :success, kind: 'vk') if is_navigational_format?
+      else
+        redirect_to new_user_registration_path
+      end
+      end
   end
-
-  # def twitter
-  #   auth_info = request.env.dig 'omniauth.auth', 'extra', 'raw_info'
-  # end
 
   def twitter
     auth_info = request.env.dig 'omniauth.auth', 'extra', 'raw_info'
+    link_url = request.env.dig 'omniauth.auth', 'info', 'urls', 'Twitter'
     redirect_to root_path, flash: {error: 'Error from twitter!' } and return unless auth_info
-    @user = User.find_user_by_oauth uid: auth_info['id'], provider: 'twitter'
-    if @user.present?
-      sign_in_and_redirect @user
-      set_flash_message(:notice, :success, kind: 'twitter') if is_navigational_format?
-    elsif current_user.present?
-      @user = current_user
-      @user.oauths.create uid: auth_raw_info['id'], provider: 'twitter', link: "https://twitter.com/id#{auth_info['user_id']}"
-      sign_in_and_redirect @user
-      set_flash_message(:notice, :success, kind: 'twitter') if is_navigational_format?
-    else
-      redirect_to new_user_registration_path
-    end
+    @user = User.find_user_by_oauth(uid: auth_info['id'], provider: 'twitter')
+      if @user.present?
+        sign_in_and_redirect @user
+        set_flash_message(:notice, :success, kind: 'twitter') if is_navigational_format?
+      else @user = User.find_by(email: auth_info['email'])
+      if @user.present?
+        @user.oauths.create uid: auth_info['id'], provider: 'twitter', link: "https://twitter.com/id#{auth_info['user_id']}"
+        sign_in_and_redirect @user
+        set_flash_message(:notice, :success, kind: 'twitter') if is_navigational_format?
+      else
+        redirect_to new_user_registration_path
+      end
+      end
   end
 
   def failure

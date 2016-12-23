@@ -12,14 +12,6 @@ class PicturesController < ApplicationController
   end
 
   def wellcome
-    print 'eragae5gsegegsegwegesgseges'
-    p 'agg5we euyhw4ue4 u45eye5u e5bhu e5ube5u 5eu b5 u '
-    p 'agg5we euyhw4ue4 u45eye5u e5bhu e5ube5u 5eu b5 u '
-    p 'agg5we euyhw4ue4 u45eye5u e5bhu e5ube5u 5eu b5 u '
-    p 'eragae5gsegegsegwegesgseges'
-    p 'agg5we euyhw4ue4 u45eye5u e5bhu e5ube5u 5eu b5 u '
-    p 'agg5we euyhw4ue4 u45eye5u e5bhu e5ube5u 5eu b5 u '
-    p 'agg5we euyhw4ue4 u45eye5u e5bhu e5ube5u 5eu b5 u '
   end
 
   def like
