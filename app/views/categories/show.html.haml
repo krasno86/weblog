@@ -6,33 +6,18 @@
 %br/
 %br/
 - @category.pictures.each do |picture|
-  %h2= picture.title
-  = link_to picture_by_category_path(category_name: picture.category.name, id: picture.id) do
+  -#%h2= picture.title
+  = link_to picture_by_category_path(category_name: picture.category.name, id: picture.id),class:"portfolio-box" do
     = image_tag((picture.avatar), class: "img-responsive", alt: "", size: "350x250")
-  -#%br
-  -#%br
-  -#%br
-  -#%br
+    .portfolio-box-caption
+      .portfolio-box-caption-content
+        .project-category.text-faded
+          Category:
+        .project-name
+          Total:
+  %br
   -#%p summary likes: #{picture.likes.size}
   -#%p comments: #{@comment.size}
 
 
 
-    -#%body{:style => "background-color: burlywood "}
-  -#%br/
-  -#%br/
-  -#%br/
-  -#%br/
-  -#- @category.pictures.each do |picture|
-  -#  %h2= picture.title
-  -#  %p= image_tag(picture.avatar)
-  -#  = link_to "Like", picture_like_path(picture_id: picture.id), method: :post, class: 'glyphicon glyphicon-thumbs-up like'
-  -#  %p summary likes: #{picture.likes.size}
-  -#  %p
-  -#    %span.glyphicon.glyphicon-time
-  -#    Posted on #{picture.created_at}
-  -#  %h3.page-header Comments:
-  -#  - picture.comments.each do |comment|
-  -#    %p
-  -#      = comment.text
-  -#  = render partial: "comments/form/", locals: {:@comment => picture.comments.build }

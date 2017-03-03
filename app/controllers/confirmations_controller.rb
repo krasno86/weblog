@@ -3,11 +3,7 @@ class ConfirmationsController <  Devise::RegistrationsController
   def show
     user = User.confirm_by_token(params[:confirmation_token])
     p"***" *1000
-    p"***" *1000
-    p"***" *1000
-    p"***" *1000
-    p user
-    p user
+    
 
     sign_in(user)
     # sign_in(resource)

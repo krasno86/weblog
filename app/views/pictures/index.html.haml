@@ -5,7 +5,7 @@
 %br/
 - @pictures.each do |picture|
   .col-lg-2.col-md-2.col-sm-2.col-xs-2
-    %p= picture.title
+    -#%p= picture.title
     = link_to picture_path(picture.id), :id => picture.id, class:"portfolio-box" do
       = image_tag(picture.avatar, size: "128x128", alt: "Edit Entry")
     %h3.page-header Comments:
