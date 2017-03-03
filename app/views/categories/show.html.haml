@@ -11,13 +11,35 @@
     = image_tag((picture.avatar), class: "img-responsive", alt: "", size: "350x250")
     .portfolio-box-caption
       .portfolio-box-caption-content
-        .project-category.text-faded
-          Category:
+
+
         .project-name
-          Total:
+          Add comment
   %br
-  -#%p summary likes: #{picture.likes.size}
-  -#%p comments: #{@comment.size}
+    -#%p summary likes: #{picture.likes.size}
+    -#%p comments: #{@comment.size}
+
+
+
+-#%body{:style => "background-color: burlywood "}
+-#%br/
+-#%br/
+-#%br/
+-#%br/
+-#%br/
+-#%br/
+-#- @category.pictures.each do |picture|
+-#  -#%h2= picture.title
+-#  .view.overlay.hm-blue-light
+-#    = link_to picture_by_category_path(category_name: picture.category.name, id: picture.id), class:"img-fluid ", alt:"" do
+-#
+-#      = image_tag((picture.avatar), class: "img-responsive", alt: "", size: "350x250")
+-#      .mask.flex-center
+-#        %p.white-text Light overlay
+-#
+-#  %br
+-#  -#%p summary likes: #{picture.likes.size}
+-#  -#%p comments: #{@comment.size}
 
 
 
