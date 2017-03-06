@@ -8,8 +8,6 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    #render layout: false
-     #@category = Category.find(params[:id])
      @category = Category.find_by_name(params[:id])
   end
 
