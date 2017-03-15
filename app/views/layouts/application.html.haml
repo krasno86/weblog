@@ -34,40 +34,45 @@
 
         #bs-example-navbar-collapse-1.collapse.navbar-collapse.hide-lg
           %ul.nav.navbar-nav.navbar-right
+            -#%li
+            -#  - if user_signed_in?
+            -#    %a Hello, #{current_user.email}
+            -#    %li
+            -#      = link_to(t('application.menu.log_out'), destroy_user_session_path, :method => :delete)
+            -#  - else
+            -#    %li
+            -#      = link_to(t('application.menu.log_in'), new_user_session_path)
+            -#    %li
+            -#      = link_to(t('application.menu.sign_up'), new_user_registration_path)
+            -#    %li
+            -#      = link_to(t('application.menu.log_in_with_facebook'), user_facebook_omniauth_authorize_path)
             %li
               - if user_signed_in?
                 %a Hello, #{current_user.email}
                 %li
-                  = link_to(t('application.menu.log_out'), destroy_user_session_path, :method => :delete)
+                  = link_to I18n.t('application.menu.log_out'), destroy_user_session_path, :method => :delete
               - else
                 %li
-                  = link_to(t('application.menu.log_in'), new_user_session_path)
+                  = link_to I18n.t('application.menu.log_in'), new_user_session_path
                 %li
-                  = link_to(t('application.menu.sign_up'), new_user_registration_path)
+                  = link_to I18n.t('application.menu.sign_up'), new_user_registration_path
                 %li
-                  = link_to(t('application.menu.log_in_with_facebook'), user_facebook_omniauth_authorize_path)
-                -#%li
-                -#  = link_to(t('application.menu.log_in_with_twitter'), user_twitter_omniauth_authorize_path)
-                -#%li
-                -#  = link_to(t('application.menu.log_in_with_vk'), user_vk_omniauth_authorize_path)
+                  = link_to I18n.t('application.menu.log_in_with_facebook'), user_facebook_omniauth_authorize_path
             %li
-              = link_to(t('application.menu.categories'), categories_path)
-              -#%a.page-scroll{:href => "/categories#index"} Категории
+              = link_to I18n.t('application.menu.categories'), categories_path
             %li
-              = link_to(t('application.menu.pictures'), pictures_path)
-              -#%a.page-scroll{:href => "/pictures#index"} Фото
+              = link_to I18n.t('application.menu.pictures'), pictures_path
             %li
-              = link_to(t('application.menu.comments'), all_comments_path)
-            -#%li
-            -#  = link_to(t("Действия пользователя"), events_path)
-            -#%li
-            -#  - if I18n.locale == :en
-            -#    = link_to locale: :ru do
-            -#      %i.flag.flag-ru
-            -#      RU
-            -#  - else
-            -#    = link_to locale: :en do
-            -#      %i.flag.flag-en
-            -#      EN
+              = link_to I18n.t('application.menu.comments'), all_comments_path
+
+            %li
+              - if I18n.locale == :en
+                = link_to locale: :ru do
+                  %i.flag.flag-ru
+                  RU
+              - else
+                = link_to locale: :en do
+                  %i.flag.flag-en
+                  EN
 
     = yield

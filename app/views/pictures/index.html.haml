@@ -5,19 +5,13 @@
 %br/
 - @pictures.each do |picture|
   .col-lg-2.col-md-2.col-sm-2.col-xs-2
-    -#%p= picture.title
     = link_to picture_path(picture.id), :id => picture.id, class:"portfolio-box" do
       = image_tag(picture.avatar, size: "128x128", alt: "Edit Entry")
     %h3.page-header Comments: #{picture.comments.size}
-    / <p><span class="glyphicon glyphicon-time"></span> Posted on <haml_silent></haml_silent></p>
     %p
       - picture.comments.each do |comment|
-        / Comments<span class="glyphicon glyphicon-chevron-right"></span>
         %p
           = comment.text
-/ <a class="btn btn-default glyphicon glyphicon-hand-up"></a>
-/ </div>
-/ </div>
 %br/
 %br/
 = paginate @pictures
