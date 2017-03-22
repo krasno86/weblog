@@ -1,4 +1,3 @@
-!!!
 %html{:lang => "en"}
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
@@ -30,22 +29,8 @@
             Menu
             %i.fa.fa-bars
           = link_to(t('application.menu.gallery'), root_path , :class => 'navbar-brand page-scroll')
-
-
         #bs-example-navbar-collapse-1.collapse.navbar-collapse.hide-lg
           %ul.nav.navbar-nav.navbar-right
-            -#%li
-            -#  - if user_signed_in?
-            -#    %a Hello, #{current_user.email}
-            -#    %li
-            -#      = link_to(t('application.menu.log_out'), destroy_user_session_path, :method => :delete)
-            -#  - else
-            -#    %li
-            -#      = link_to(t('application.menu.log_in'), new_user_session_path)
-            -#    %li
-            -#      = link_to(t('application.menu.sign_up'), new_user_registration_path)
-            -#    %li
-            -#      = link_to(t('application.menu.log_in_with_facebook'), user_facebook_omniauth_authorize_path)
             %li
               - if user_signed_in?
                 %a Hello, #{current_user.email}
