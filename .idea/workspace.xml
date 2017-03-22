@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3748385f-8aad-49cc-abc1-dbf5f5ccc5e6" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.rakeTasks" afterPath="$PROJECT_DIR$/.idea/.rakeTasks" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/application.html.haml" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.haml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/initializers/locale.rb" afterPath="$PROJECT_DIR$/config/initializers/locale.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/locales/application.ru.yml" afterPath="$PROJECT_DIR$/config/locales/application.ru.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/locales/ru.yml" afterPath="$PROJECT_DIR$/config/locales/ru.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/tasks/my_namespace.rake" afterPath="$PROJECT_DIR$/lib/tasks/my_namespace.rake" />
     </list>
     <ignored path="weblog.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -89,8 +83,8 @@
       <file leaf-file-name="my_namespace.rake" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/tasks/my_namespace.rake">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="10" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
+            <state relative-caret-position="374">
+              <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -180,7 +174,7 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="814" />
-    <option name="y" value="24" />
+    <option name="y" value="28" />
     <option name="width" value="1106" />
     <option name="height" value="1032" />
   </component>
@@ -311,15 +305,15 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="RailsProjectView">
         <subPane />
       </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$USER_HOME$/my_shopify_app" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js-jscs-nodeInterpreter" value="/usr/bin/node" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
@@ -624,11 +618,12 @@
       <workItem from="1489571255495" duration="1913000" />
       <workItem from="1490108510138" duration="3172000" />
       <workItem from="1490174294078" duration="541000" />
+      <workItem from="1490196030626" duration="56000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="592844000" />
+    <option name="totallyTimeSpent" value="592900000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -640,7 +635,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="814" y="24" width="1106" height="1032" extended-state="0" />
+    <frame x="814" y="28" width="1106" height="1032" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21644613" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1052,8 +1047,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/tasks/my_namespace.rake">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="10" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
+        <state relative-caret-position="374">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding />
         </state>
       </provider>
