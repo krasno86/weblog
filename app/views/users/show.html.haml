@@ -4,12 +4,13 @@
 %br
 .header-content
   .header-content-inner
-    %p You name: #{@user.name}
-    %p
-      %label Avatar
+    .text-center
+      %h1
+        Profile:
+      %h2 You name: #{@user.name}
       = image_tag @user.avatar
-    %p
-      Comments total: #{@user.comments.size}
-= link_to 'Edit', edit_user_path(@user)
-\|
-= link_to 'Back', user_path(@user)
+      %p
+        Comments total: #{@user.comments.size}
+      = link_to 'Edit', edit_user_path(@user)
+      \|
+      = link_to 'Back', user_path(@user)
