@@ -1,0 +1,15 @@
+%br
+%br
+%br
+%br
+.header-content
+  .header-content-inner
+    %p You name: #{@user.name}
+    %p
+      %label Avatar
+      = image_tag @user.avatar
+    %p
+      Comments total: #{@user.comments.size}
+= link_to 'Edit', edit_user_path(@user)
+\|
+= link_to 'Back', user_path(@user)

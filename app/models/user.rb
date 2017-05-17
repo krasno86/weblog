@@ -10,7 +10,7 @@ class User < ApplicationRecord
   has_many :likes, dependent: :destroy
 
   acts_as_voter
-
+  mount_uploader :avatar, AvatarUploader
   accepts_nested_attributes_for :oauths
 
   # def self.from_omniauth(auth)

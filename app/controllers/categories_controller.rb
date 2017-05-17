@@ -1,7 +1,10 @@
 class CategoriesController < ApplicationController
 
-  #before_filter :authenticate_user!
   before_action :set_category, only:[:!]
+
+  def set_locale
+    I18n.locale = params[:locale] || I18n.default_locale
+  end
 
   def after_sign_in_path_for(resource)
     current_user_path
@@ -12,7 +15,6 @@ class CategoriesController < ApplicationController
   end
 
   def index
-    #render layout: false
     @categories = Category.all
   end
 

@@ -7,7 +7,6 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
-
   devise_scope :user do
     delete 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session_omniouth
   end
@@ -20,6 +19,7 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :users, only: [:show, :edit, :update, :destroy]
   resources :categories, only: [:index, :show] do
     resources :pictures, only: [:index, :show, :wellcome] do
       resource :comments, only: [:index]
@@ -27,9 +27,7 @@ Rails.application.routes.draw do
   end
 
   post 'pictures/comments', to: 'comments#create', as: :picture_comments
-
   get 'all_comments', to: 'comments#index'
-
   get 'categories/:category_name/:id', to: 'pictures#show', as: :picture_by_category
 
   resources :pictures do

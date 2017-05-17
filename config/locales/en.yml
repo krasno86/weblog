@@ -1,7 +1,7 @@
 en:
   application:
     menu:
-      gallery: 'Gallery'
+      home: 'Home'
       log_in: 'Log in'
       log_out: 'Log out'
       sign_up: 'Sign up'
@@ -11,3 +11,4 @@ en:
       log_in_with_facebook: 'Log in with facebook'
       log_in_with_twitter: 'Log in with twitter'
       log_in_with_vk: 'Log in with vk'
+      profile: 'Profile'

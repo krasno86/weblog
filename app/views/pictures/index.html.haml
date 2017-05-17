@@ -1,8 +1,7 @@
-%body{:style => "background-color: burlywood "}
-%br/
-%br/
-%br/
-%br/
+%br
+%br
+%br
+%br
 - @pictures.each do |picture|
   .col-lg-2.col-md-2.col-sm-2.col-xs-2
     = link_to picture_path(picture.id), :id => picture.id, class:"portfolio-box" do

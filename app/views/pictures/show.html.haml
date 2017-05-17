@@ -1,21 +1,22 @@
-%body{:style => "background-color: burlywood "}
-  %br/
-  %br/
-  %br/
-  %br/
-  .header-content
-    .header-content-inner
-      %h2
-        = @picture.title.delete!'.jpg'
-      %p= image_tag(@picture.avatar)
-      = link_to "Like", picture_like_path(picture_id: @picture.id), method: :post, class: 'glyphicon glyphicon-thumbs-up like'
-      %p summary likes: #{@picture.likes.size}
+%br
+%br
+%br
+%br
+.header-content
+  .header-content-inner
+    %h2
+      = @picture.title.delete!'.jpg'
+    %p
+      = image_tag @picture.avatar
+    = link_to "Like", picture_like_path(picture_id: @picture.id), method: :post, class: 'glyphicon glyphicon-thumbs-up like'
+    %p
+      summary likes: #{@picture.likes.size}
+    %p
+      %span.glyphicon.glyphicon-time
+      Posted on #{@picture.created_at}
+    %h3.page-header Comments:
+    - @picture.comments.each do |comment|
       %p
-        %span.glyphicon.glyphicon-time
-        Posted on #{@picture.created_at}
-      %h3.page-header Comments:
-      - @picture.comments.each do |comment|
-        %p
-          = comment.text
-      = render partial: "comments/form/", locals: {:@comment => @picture.comments.build }
+        = comment.text
+    = render partial: "comments/form/", locals: {:@comment => @picture.comments.build }
 

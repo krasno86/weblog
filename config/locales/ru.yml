@@ -1,7 +1,7 @@
 ru:
   application:
     menu:
-      gallery: 'Галерея'
+      home: 'Домой'
       log_in: 'Войти'
       sign_up: 'Зарегистрироваться'
       log_out: 'Выйти'
@@ -11,3 +11,4 @@ ru:
       log_in_with_facebook: 'Войти с помощью facebook'
       log_in_with_twitter: 'Войти с помощью twitter'
       log_in_with_vk: 'Войти с помощью vk'
+      profile: 'Профиль'

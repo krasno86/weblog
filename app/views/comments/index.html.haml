@@ -1,13 +1,11 @@
-%body{:style => "background-color: burlywood "}
-%br/
-%br/
-%br/
-%br/
-%h1.text-center All comments:
+%br
+%br
+%br
+%br
+%h1.text-center Total comments: #{current_user.comments.size}
 - @comments.each do |comment|
-  %p Comment: #{comment.text}. Create at #{comment.created_at.strftime("%m-%d-%Y - %H:%M")}
-  -if comment.user
+  -if comment.user.present?
     %p
-      commenter: #{comment.user.email}
+      %p Comment: #{comment.text}. Create at #{comment.created_at.strftime("%m-%d-%Y - %H:%M")}
 
 
