@@ -29,7 +29,9 @@
         #bs-example-navbar-collapse-1.collapse.navbar-collapse.hide-lg
           %ul.nav.navbar-nav.navbar-right
             %li
-              - if user_signed_in?
+              - if user_signed_in? && current_user.name.present?
+                %a Hello, #{current_user.name}
+              - elsif user_signed_in? && current_user.email.present
                 %a Hello, #{current_user.email}
                 %li
                   = link_to I18n.t('application.menu.log_out'), destroy_user_session_path, :method => :delete

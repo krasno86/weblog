@@ -12,6 +12,7 @@ class PicturesController < ApplicationController
   end
 
   def wellcome
+    @user = current_user
   end
 
   def like
