@@ -34,6 +34,7 @@
                 = link_to I18n.t('application.menu.profile'), user_path(current_user.id)
               - elsif user_signed_in? && current_user.email.present
                 %a Hello, #{current_user.email}
+                = link_to I18n.t('application.menu.profile'), user_path(current_user.id)
                 %li
                   = link_to I18n.t('application.menu.log_out'), destroy_user_session_path, :method => :delete
               - else
