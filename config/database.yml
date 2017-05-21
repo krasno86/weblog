@@ -3,8 +3,8 @@ development:
   encoding: utf8
   database: weblog_development
   pool: 5
-  username: krasno_o
-  password: 123456
+  username: oleg
+  password: 123123
 
 test: &TEST
   adapter: postgresql
