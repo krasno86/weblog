@@ -2,8 +2,9 @@
   = f.hidden_field :picture_id
   %p
     = f.label :text
-    %br/
-    = f.text_field :text
+    %br
+    = f.text_field :text, placeholder: 'your comment...'
+  %br
   = flash[:recaptcha_error]
   = recaptcha_tags
   = f.submit

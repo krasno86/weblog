@@ -17,6 +17,7 @@
 /tmp
 # Ignore .idea.
 /.idea
-
+/.ruby-version
+/.ruby-gemset
 # Ignore /public/uploads/picture
 /public/uploads/picture

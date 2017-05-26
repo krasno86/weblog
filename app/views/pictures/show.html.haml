@@ -4,17 +4,19 @@
 %br
 .header-content
   .header-content-inner
-    %h2
+    %h2.text-center
       = @picture.title.delete!'.jpg'
     %p
       = image_tag @picture.avatar
-    = link_to "Like", picture_like_path(picture_id: @picture.id), method: :post, class: 'glyphicon glyphicon-thumbs-up like'
+    %p
+      = link_to "Like", picture_like_path(picture_id: @picture.id), method: :post, class: 'glyphicon glyphicon-thumbs-up like'
     %p
       summary likes: #{@picture.likes.size}
     %p
       %span.glyphicon.glyphicon-time
       Posted on #{@picture.created_at}
-    %h3.page-header Comments:
+    %h3.page-header
+      Comments:
     - @picture.comments.each do |comment|
       %p
         = comment.text

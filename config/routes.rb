@@ -30,8 +30,8 @@ Rails.application.routes.draw do
   get 'all_comments', to: 'comments#index'
   get 'categories/:category_name/:id', to: 'pictures#show', as: :picture_by_category
 
-  resources :pictures do
-    resource :like
+  resources :pictures, only: [:index, :show, :wellcome] do
+    resource :like, only: [:index, :create]
   end
   get 'categories/index', as: 'user_root'
 end
