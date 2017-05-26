@@ -20,6 +20,7 @@ gem 'rspec'
 gem 'kaminari',  '0.17.0'
 gem 'activeadmin', github: 'activeadmin'
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'
+gem 'puma'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 group :development, :test do
@@ -29,7 +30,7 @@ group :development, :test do
   gem 'byebug'
   gem 'shoulda-matchers', '~> 3.1'
 end
-gem 'rails', '5.0.0.1'
+gem 'rails', '~> 5.0.1'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
