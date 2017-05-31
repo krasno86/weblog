@@ -4,8 +4,8 @@
 %br/
 %br/
 - @category.pictures.each do |picture|
-  = link_to picture_by_category_path(category_name: picture.category.name, id: picture.id),class:"portfolio-box" do
-    = image_tag((picture.avatar), class: "img-responsive", alt: "", size: "350x250")
+  = link_to picture_by_category_path(category_name: picture.category.name, id: picture.id), class:"portfolio-box", size: "450x350" do
+    = image_tag((picture.avatar), class: "img-responsive", alt: "", size: "450x350")
     .portfolio-box-caption
       .portfolio-box-caption-content
         .project-name

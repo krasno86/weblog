@@ -28,7 +28,6 @@ class PicturesController < ApplicationController
   end
 
   def show
-    #@likes=Like.all
     @picture = Picture.find(params[:id])
   end
 

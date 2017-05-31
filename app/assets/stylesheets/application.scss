@@ -17,3 +17,15 @@
 @import "bootstrap";
 
 
+.mfp-no-margins .mfp-figure:after {
+  top: 0;
+  bottom: 0;
+}
+/* padding for main container */
+.mfp-no-margins .mfp-container {
+  padding: 0;
+}
+
+.mfp-no-margins img.mfp-img {
+  padding: 0;
+}
